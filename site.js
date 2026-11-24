@@ -19,3 +19,26 @@ document.querySelectorAll('.video-toggle').forEach(videoToggle => {
   } else video.play().catch(update);
   update();
 });
+
+// Start silent Nansen previews when they enter the visible page.
+const nansenPreviews = document.querySelectorAll('.nansen-project video');
+const reducePreviewMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const startNansenPreview = video => {
+  if (reducePreviewMotion.matches) return;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.play().catch(() => {});
+};
+const nansenPreviewObserver = new IntersectionObserver(entries => {
+  entries.forEach(({target, isIntersecting}) => {
+    if (isIntersecting) startNansenPreview(target);
+  });
+}, {threshold: 0.15});
+nansenPreviews.forEach(video => {
+  nansenPreviewObserver.observe(video);
+  video.addEventListener('canplay', () => startNansenPreview(video));
+  if (reducePreviewMotion.matches) { video.autoplay = false; video.pause(); }
+});
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) nansenPreviews.forEach(video => startNansenPreview(video));
+});
