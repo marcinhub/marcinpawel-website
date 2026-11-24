@@ -143,3 +143,5 @@
 .experience-band-muted{background:#f0f3f1}.experience-band-muted .nansen-section{border-top:0}.axelar-section{background:var(--paper)}
 
 .experience-band + .about{border-top:0}
+
+@media(min-width:901px){.nansen-projects.axelar-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
