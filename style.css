@@ -137,3 +137,5 @@
 .nansen-section{border-top:1px solid var(--line)}.nansen-projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}.nansen-project .feature-video{margin-bottom:24px}.nansen-project h3{font-size:1.7rem;line-height:1.15;margin-bottom:18px}.nansen-project>p{color:var(--muted);line-height:1.7}.nansen-section .role-heading>p{max-width:none}@media(max-width:900px){.nansen-projects{grid-template-columns:1fr;gap:42px}.nansen-project h3{font-size:1.8rem}.nansen-project .feature-video{max-width:680px}}
 
 .company-strip .nansen-logo{max-width:165px}.company-strip .nansen-logo img{width:100%;height:auto}@media(max-width:620px){.company-strip .nansen-logo{max-width:none}.company-strip .nansen-logo img{width:120px;max-width:none}}
+
+.company-strip .company-logo img{width:230px;max-width:100%;max-height:none;height:auto;object-fit:contain}.company-strip .company-logo{max-width:230px;overflow:visible}@media(max-width:620px){.company-strip .company-logo{max-width:none;height:64px}.company-strip .company-logo img{width:100%;max-width:100%;height:auto;max-height:none}}
